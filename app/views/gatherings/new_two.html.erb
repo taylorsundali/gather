@@ -1,0 +1,45 @@
+<h1>Gatherings#new</h1>
+<p>Find me in app/views/gatherings/new.html.erb</p>
+
+<%= link_to("<< Back to page 1", {:action => 'new'}, :class => 'back-link') %>
+  <%= form_for(:gathering, :url => {:action => 'create'}) do |f| %>
+
+    <table summary="Gathering form fields">
+        <th>Ante Date</th>
+        <td><%= f.date_field(:ante_date) %></td>
+      </tr>
+      <tr>
+        <th>Ante Time</th>
+        <td><%= f.time_field(:ante_time) %></td>
+      </tr>
+      <tr>
+        <th>Event Type</th>
+        <td><%= f.text_field(:gathering_type) %></td>
+      </tr>
+      <tr>
+        <th>Event Description</th>
+        <td><%= f.text_field(:description) %></td>
+      </tr>
+      <tr>
+        <th>Max Attendees</th>
+        <td><%= f.text_field(:max_attendees) %></td>
+      </tr>
+      <tr>
+        <th>Min Attendees</th>
+        <td><%= f.text_field(:min_attendees) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create New Gathering") %>
+    </div>
+  <% end %>
+
+<%= link_to("Page 3", {:action => 'new_three'}, :class => 'action new_three') %>
+
+
+
+
+
+
+
